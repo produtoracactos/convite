@@ -16,19 +16,27 @@
             align-items: center;
             overflow: hidden;
         }
-        video {
-            width: 100%;
-            height: 100%;
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <video id="video" autoplay playsinline>
-        <source src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3" type="video/mp4">
-    </video>
+    <iframe id="videoFrame"
+        src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&playsinline=1"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+
     <script>
-        const video = document.getElementById("video");
-        video.onended = () => { window.close(); };
+        const videoFrame = document.getElementById("videoFrame");
+        
+        // Fecha a janela quando o vídeo termina
+        videoFrame.onload = function() {
+            setTimeout(() => { window.close(); }, 16000); // Ajuste conforme a duração do vídeo
+        };
     </script>
 </body>
 </html>

@@ -24,13 +24,12 @@
     </style>
 </head>
 <body>
-    <iframe id="video" src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" allowfullscreen></iframe>
+    <iframe id="video" src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3" allow="autoplay" allowfullscreen></iframe>
     <script>
-        window.addEventListener("message", (event) => {
-            if (event.origin.includes("youtube.com") && event.data === "end") {
-                window.close();
-            }
-        });
+        const video = document.getElementById("video");
+        setTimeout(() => {
+            window.close();
+        }, 25000); // Tempo aproximado do vídeo para fechar automaticamente
     </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo de Convite</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="video" src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0" allowfullscreen></iframe>
+    <script>
+        window.addEventListener("message", (event) => {
+            if (event.origin.includes("youtube.com") && event.data === "end") {
+                window.close();
+            }
+        });
+    </script>
+</body>
+</html>

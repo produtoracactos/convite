@@ -16,26 +16,23 @@
             align-items: center;
             overflow: hidden;
         }
-        iframe {
+        video {
             width: 100vw;
             height: 100vh;
-            border: none;
         }
     </style>
 </head>
 <body>
-    <iframe id="videoFrame"
-        src="https://www.youtube.com/embed/oPCqyX_aADw?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&playsinline=1"
-        allow="autoplay; fullscreen"
-        allowfullscreen>
-    </iframe>
-
+    <video id="videoPlayer" autoplay playsinline>
+        <source src="https://github.com/produtoracactos/videoconvite/raw/main/04023.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeos.
+    </video>
+    
     <script>
-        const videoFrame = document.getElementById("videoFrame");
+        const videoPlayer = document.getElementById("videoPlayer");
         
-        // Fecha a janela automaticamente quando o vídeo terminar
-        videoFrame.onload = function() {
-            setTimeout(() => { window.close(); }, 16000); // Ajuste conforme a duração exata do vídeo
+        videoPlayer.onended = function() {
+            window.close();
         };
     </script>
 </body>
